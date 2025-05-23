@@ -21,6 +21,7 @@
 			artifacts = dataResponse[0].artifacts;
 			fetchCount++;
 			showFlash = true;
+			loading = false;
 
 			setTimeout(() => {
 				showFlash = false;
@@ -32,7 +33,6 @@
 
 	onMount(() => {
 		fetchData();
-		loading = false;
 	});
 
 	onMount(() => {
