@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@keyframes one-second-green-text-flash {
+	0% {
+		color: var(--_initial-color, inherit); /* inherit for default text color */
+	}
+	10%,
+	90% {
+		color: #10b981; /* A darker green for text visibility */
+	}
+	100% {
+		color: var(--_initial-color, inherit);
+	}
+}
+
+.flash-green-text-effect {
+	animation-name: one-second-green-text-flash;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	font-weight: bold;
+}
+
+@keyframes flash {
+	0%,
+	100% {
+		background-color: transparent;
+		color: #1fdb44;
+		/* border: 1px solid #1fdb44; */
+	}
+	50% {
+		background-color: #1fdb44;
+		color: white;
+	}
+}
+
+.sqs-button-element--primary {
+	animation: flash 3.5s infinite;
+	transition:
+		background-color 0.75s,
+		color 0.75s;
+}
